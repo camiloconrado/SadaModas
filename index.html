@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sada Modas - Moda Femenina que Inspira</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="logo-loader">Sada Modas</div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Sada</span>
+                <span class="logo-accent">Modas</span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#coleccion" class="nav-link">Colección</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-background">
+            <div class="gradient-overlay"></div>
+            <div class="animated-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <span class="hero-subtitle">Nueva Colección 2025</span>
+                <h1 class="hero-title">
+                    Viste tu Estilo<br>
+                    <span class="gradient-text">con Confianza</span>
+                </h1>
+                <p class="hero-description">
+                    Descubre la elegancia en cada prenda. Moda femenina que resalta tu personalidad única.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#coleccion" class="btn btn-primary">
+                        <span>Explorar Colección</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#" class="btn btn-outline" onclick="openWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Contáctanos</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                <div class="floating-card card-1">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <strong>1000+</strong>
+                        <span>Clientas Felices</span>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-shopping-bag"></i>
+                    <div>
+                        <strong>Nueva</strong>
+                        <span>Colección</span>
+                    </div>
+                </div>
+                <div class="hero-model">
+                    <div class="model-placeholder">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+            <span>Desliza para explorar</span>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Nuestras Categorías</span>
+                <h2 class="section-title">Encuentra tu <span class="gradient-text">Estilo Perfecto</span></h2>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="0" onclick="filterProducts('casual')">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Casual</h3>
+                    <p>Comodidad y estilo para el día a día</p>
+                    <div class="category-overlay"></div>
+                </div>
+
+                <div class="category-card featured" data-aos="zoom-in" data-aos-delay="100" onclick="filterProducts('formal')">
+                    <div class="category-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Formal</h3>
+                    <p>Elegancia para ocasiones especiales</p>
+                    <span class="featured-badge">Popular</span>
+                    <div class="category-overlay"></div>
+                </div>
+
+                <div class="category-card" data-aos="zoom-in" data-aos-delay="200" onclick="filterProducts('deportiva')">
+                    <div class="category-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Deportiva</h3>
+                    <p>Activa y llena de energía</p>
+                    <div class="category-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="coleccion">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Descubre lo Nuevo</span>
+                <h2 class="section-title">Nuestra <span class="gradient-text">Colección</span></h2>
+            </div>
+
+            <div class="filter-tabs" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="casual">Casual</button>
+                <button class="filter-btn" data-filter="formal">Formal</button>
+                <button class="filter-btn" data-filter="deportiva">Deportiva</button>
+                <button class="filter-btn" data-filter="nuevos">Nuevos</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+
+            <div class="load-more-container" data-aos="fade-up">
+                <button class="btn btn-outline" onclick="loadMoreProducts()">
+                    <span>Ver Más Productos</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="image-placeholder">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <strong>1+</strong>
+                            <span>Año de Experiencia</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong>500+</strong>
+                            <span>Prendas Vendidas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text" data-aos="fade-left">
+                    <span class="section-subtitle">Sobre Nosotros</span>
+                    <h2 class="section-title">
+                        Pasión por la <span class="gradient-text">Moda</span>
+                    </h2>
+                    <p>
+                        En <strong>Sada Modas</strong>, creemos que cada mujer merece sentirse hermosa, 
+                        segura y única. Desde hace un año, nos hemos dedicado a curar una colección 
+                        excepcional de prendas que reflejan las últimas tendencias sin sacrificar 
+                        la comodidad.
+                    </p>
+                    <p>
+                        Nuestra misión es empoderarte a través de la moda, ofreciéndote piezas 
+                        versátiles que se adaptan a tu estilo de vida dinámico. Cada prenda es 
+                        seleccionada cuidadosamente pensando en ti.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Calidad Garantizada</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Envíos Rápidos</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Atención Personalizada</span>
+                        </div>
+                    </div>
+
+                    <a href="#contacto" class="btn btn-primary">
+                        <span>Conoce Más</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Testimonios</span>
+                <h2 class="section-title">Lo que dicen nuestras <span class="gradient-text">Clientas</span></h2>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Increíble calidad y diseños únicos. Compré un vestido formal y recibí 
+                        tantos cumplidos. ¡Definitivamente volveré a comprar!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <strong>María González</strong>
+                            <span>Cliente Verificada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "La atención es excepcional. Me ayudaron a elegir la talla perfecta por 
+                        WhatsApp. Mis prendas favoritas son de Sada Modas."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <strong>Laura Martínez</strong>
+                            <span>Cliente Frecuente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Precios justos y ropa hermosa. La línea deportiva es mi favorita. 
+                        ¡100% recomendado para todas!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <strong>Ana Rodríguez</strong>
+                            <span>Cliente Satisfecha</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <span class="section-subtitle">Contáctanos</span>
+                    <h2 class="section-title">
+                        Estamos aquí <span class="gradient-text">para ti</span>
+                    </h2>
+                    <p>
+                        ¿Tienes dudas sobre tallas, envíos o productos? Contáctanos por 
+                        WhatsApp y te responderemos de inmediato.
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>+57 300 123 4567</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <span>info@sadamodas.com</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Ubicación</strong>
+                                <span>Medellín, Antioquia, Colombia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-cta" data-aos="fade-left">
+                    <div class="cta-card">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>¿Listo para comprar?</h3>
+                        <p>Contáctanos por WhatsApp y te asesoramos personalmente</p>
+                        <button class="btn btn-primary btn-large" onclick="openWhatsApp()">
+                            <span>Abrir WhatsApp</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-logo">
+                        <span>Sada</span>
+                        <span class="gradient-text">Modas</span>
+                    </h3>
+                    <p>Viste tu estilo con confianza. Moda femenina que inspira.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#coleccion">Colección</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Categorías</h4>
+                    <ul>
+                        <li><a href="#coleccion">Casual</a></li>
+                        <li><a href="#coleccion">Formal</a></li>
+                        <li><a href="#coleccion">Deportiva</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Recibe nuestras últimas novedades</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Tu email">
+                        <button><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sada Modas. Todos los derechos reservados.</p>
+                <p>Diseñado con <i class="fas fa-heart"></i> en Medellín, Colombia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/573001234567" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </a>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" onclick="toggleCart()"></div>
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h3>Tu Carrito</h3>
+                <button class="cart-close" onclick="toggleCart()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be inserted here -->
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <strong id="cartTotal">$0</strong>
+                </div>
+                <button class="btn btn-primary btn-block" onclick="checkout()">
+                    <span>Finalizar Compra</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-outline btn-block" onclick="toggleCart()">
+                    Seguir Comprando
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+        <div class="modal-overlay" onclick="closeQuickView()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeQuickView()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="quickViewContent">
+                <!-- Quick view content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
